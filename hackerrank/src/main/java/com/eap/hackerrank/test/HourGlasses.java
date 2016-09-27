@@ -1,11 +1,5 @@
 package com.eap.hackerrank.test;
 
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
-
 
 public class HourGlasses {
 
@@ -29,41 +23,19 @@ public class HourGlasses {
 
     public static void main(String[] args) {
 
-		int MAX_VALUE = 0;
-		int tmp;
-        //Scanner in = new Scanner(System.in);
-        
-        //int arr[][] = new int[6][6];
+		int maxsum = -10000;
 
-        //for (int c = 0; c < 3; c++) {
-	        
-	     for (int a = 0; a < 4; a++) {
-			 for (int b = 0; b < 4; b++) {
-				 tmp = printHourGlass(a, b);
-				 if (tmp > MAX_VALUE)
-					 MAX_VALUE = tmp;
-			 }
-		 }
-		System.out.println(MAX_VALUE);
-    }
-
-	private static int printHourGlass(int a, int b) {
-		int hourGlassSum = 0;
-		int cnt = 0;
-
-		for (int i = a; i < (3 + a); i++){
-			for (int j = b; j < (3 + b); j++) {
-				cnt++;
-				if ( cnt == 4 || cnt == 6 )
-					continue;
-				else {
-					hourGlassSum = hourGlassSum + arr[i][j];
-					//System.out.print(arr[i][j]);
-				}
+		for(int arr_i=0; arr_i < 4; arr_i++)
+		{
+			for(int arr_j=0; arr_j < 4; arr_j++)
+			{
+				int sum = arr[arr_i][arr_j] + arr[arr_i][arr_j+1] + arr[arr_i][arr_j+2]
+						+ arr[arr_i+1][arr_j+1]
+						+ arr[arr_i+2][arr_j] + arr[arr_i+2][arr_j+1] + arr[arr_i+2][arr_j+2];
+				if (sum>maxsum)
+					maxsum = sum;
 			}
-			//System.out.println();
 		}
-		//System.out.println("hourGlassSum: " + hourGlassSum);
-		return Math.abs(hourGlassSum);
-	}
+		System.out.println(maxsum);
+    }
 }
