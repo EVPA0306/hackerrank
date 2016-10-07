@@ -4,11 +4,7 @@ package com.eap.hackerrank.test;
  * Created by evgenypavlenko on 9/28/16.
  */
 
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
 public class ArrayLeftRotation {
 
@@ -21,6 +17,17 @@ public class ArrayLeftRotation {
             System.arraycopy(a,1,copy,0,a.length-1);
             copy[a.length-1] = back_copy[i];
             a = copy;
+        }
+        return a;
+    }
+
+    public static int[] arrayLeftRotation(int[] a, int k) {
+        int i;
+        for (int j=0; j < k; j++) {
+            int tmp = a[0];
+            for (i = 1; i < a.length; i++)
+                a[i - 1] = a[i];
+            a[i - 1] = tmp;
         }
         return a;
     }
@@ -38,7 +45,9 @@ public class ArrayLeftRotation {
 
         int[] output = new int[n];
 
-        output = arrayLeftRotation(a, n, k);
+        //output = arrayLeftRotation(a, n, k);
+        output = arrayLeftRotation(a, k);
+
 
         for(int i = 0; i < n; i++)
             System.out.print(output[i] + " ");

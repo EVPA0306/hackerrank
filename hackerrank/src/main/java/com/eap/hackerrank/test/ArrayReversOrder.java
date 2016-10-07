@@ -21,7 +21,7 @@ public class ArrayReversOrder {
         }
 
         for (int i= 0; i < arr.length; i++) {
-            System.out.print(arr[(n-1)-i] + " ");
+            System.out.print(arr[(arr.length-1)-i] + " ");
         }
         System.out.println();
     }

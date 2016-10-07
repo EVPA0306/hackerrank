@@ -8,7 +8,8 @@ import java.util.Arrays;
 public class RemoveDups {
 
     public static void main(String...args) {
-        String strWithDups = "aaaaadsdsfkajglkasaksdkkkklkksddddbbbbdddddcccccc";
+
+        String strWithDups = "abccd";
         char[] arr = strWithDups.toCharArray();
         char[] tempArray = new char[arr.length];
         Arrays.sort(arr);
@@ -19,11 +20,13 @@ public class RemoveDups {
                     tempArray[k] = arr[a];
                     k++;
                     a++;
-                } else
+                } else {
                     a++;
+            }
         }
-        char[] resArray = new char[k];
-        System.arraycopy(tempArray,0,resArray,0,k);
+        tempArray[k] = arr[a];
+        char[] resArray = new char[k+1];
+        System.arraycopy(tempArray,0,resArray,0,k+1);
         System.out.println(new String(resArray));
     }
 }
