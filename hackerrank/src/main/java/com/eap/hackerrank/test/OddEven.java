@@ -9,7 +9,7 @@ import java.util.regex.*;
 /**
  * Created by evgenypavlenko on 10/4/16.
  */
-public class Solution {
+public class OddEven {
     public static void main(String[] args) {
 
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
