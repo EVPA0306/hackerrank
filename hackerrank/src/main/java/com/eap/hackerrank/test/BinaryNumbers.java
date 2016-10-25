@@ -19,7 +19,7 @@ public class BinaryNumbers {
     static public int convertToBinary(int n) {
         int consOnes = 0;
         int temp = 0;
-        int i = 1000000;
+        int i = 8;
         int[] bites = new int[i];
         int remainder;
         while (n > 0) {

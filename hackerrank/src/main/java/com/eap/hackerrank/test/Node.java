@@ -43,6 +43,19 @@ public class Node {
         }
     }
 
+    public static Node removeDuplicates(Node head) {
+        //Write your code here
+        Node temp = head;
+        while (temp.next != null) {
+            if (temp.data == temp.next.data) {
+                temp.next = temp.next.next;
+            } else {
+                temp = temp.next;
+            }
+        }
+        return head;
+    }
+
     public static void main(String args[]) {
 
         //List<Node> linkedList = new LinkedList<Node>();
@@ -55,7 +68,9 @@ public class Node {
             int ele = sc.nextInt();
             head = insert(head,ele);
         }
-        display(head);
+        //display(head);
         sc.close();
+        head=removeDuplicates(head);
+        display(head);
     }
 }
