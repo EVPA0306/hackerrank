@@ -1,4 +1,4 @@
-package com.eap.hackerrank.test;
+package com.eap.hackerrank.test.trees;
 
 /**
  * Created by evgenypavlenko on 10/20/16.

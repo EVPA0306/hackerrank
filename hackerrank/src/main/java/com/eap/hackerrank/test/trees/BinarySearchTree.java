@@ -1,10 +1,10 @@
-package com.eap.hackerrank.test;
+package com.eap.hackerrank.test.trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-import static com.eap.hackerrank.test.TreeNode.insert;
+import static com.eap.hackerrank.test.trees.TreeNode.insert;
 
 /**
  * Created by evgenypavlenko on 10/20/16.
