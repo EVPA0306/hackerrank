@@ -1,7 +1,5 @@
 package com.eap.hackerrank.test.trees;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 import static com.eap.hackerrank.test.trees.TreeNode.insert;
@@ -17,18 +15,22 @@ public class BinarySearchTree {
 
         Scanner sc = new Scanner(System.in);
         //int f = sc.nextInt();
-        int t = sc.nextInt();
+        //int t = sc.nextInt();
+        int t = 8;
         TreeNode root = null;
+        //int[] arr = {100,50,25,75,150,125,110,75};
+        int[] arr = {75,110,125,150,75,25,50,100};
 
         while(t-- > 0) {
-            int data = sc.nextInt();
+            int data = arr[t];//sc.nextInt();
             root = insert(root,data);
         }
         int height = getHeight(root);
-        System.out.println(height);
+        System.out.println("Tree's height: " + height);
         //System.out.println(find(f,root));
-        //levelOrder(root);
-        System.out.println(find(5,root));
+        System.out.print("levelOrder: ");
+        levelOrder(root);
+        System.out.println(find(25,root));
     }
 
     static void levelOrder(TreeNode root) {
@@ -42,6 +44,7 @@ public class BinarySearchTree {
 
                 TreeNode current = queue.poll();
                 System.out.print(current.data + " ");
+                //System.out.println();
                 if (current.left != null) {
                     queue.add(current.left);
                 }
